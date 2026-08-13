@@ -22,7 +22,7 @@ echo "================================================="
 echo "        Entry Network Tuning V3"
 echo "================================================="
 
-SYSCTL_FILE="/etc/sysctl.d/99-entry-tuning.conf"
+SYSCTL_FILE="/etc/sysctl.conf"
 LIMITS_FILE="/etc/security/limits.d/99-entry-nofile.conf"
 SYSTEMD_LIMIT_DIR="/etc/systemd/system.conf.d"
 SYSTEMD_LIMIT_FILE="${SYSTEMD_LIMIT_DIR}/99-entry-nofile.conf"
@@ -112,7 +112,7 @@ if modinfo nf_conntrack >/dev/null 2>&1; then
 fi
 
 # ------------------------------------------------------------
-# sysctl 主配置
+# 重写 /etc/sysctl.conf
 # ------------------------------------------------------------
 
 cat > "$SYSCTL_FILE" <<EOF
@@ -227,7 +227,7 @@ EOF
 echo
 echo "应用 sysctl..."
 
-sysctl -p "$SYSCTL_FILE"
+sysctl -p
 systemctl daemon-reexec 2>/dev/null || true
 
 # ------------------------------------------------------------
@@ -288,6 +288,8 @@ echo
 echo "================================================="
 echo "优化完成"
 echo "================================================="
+echo
+echo "旧 /etc/sysctl.conf 已自动备份为带时间戳的 .bak 文件。"
 echo
 echo "建议重启入口程序，使新的文件描述符限制生效。"
 echo
