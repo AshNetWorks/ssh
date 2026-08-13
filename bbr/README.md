@@ -1,6 +1,6 @@
 # Debian BBR / 入口服务器网络优化脚本
 
-本仓库提供 3 个不同强度的 Debian 网络优化脚本。
+本目录提供 3 个不同强度的 Debian 网络优化脚本。
 
 > 建议先了解每个版本的区别，再选择执行。  
 > 修改内核网络参数存在一定风险，生产环境建议先在测试机验证。
@@ -37,13 +37,13 @@
 一键执行：
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbrs.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbr/bbrs.sh)
 ```
 
 或者先下载再执行：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbrs.sh -o /root/bbrs.sh
+curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbr/bbrs.sh -o /root/bbrs.sh
 chmod +x /root/bbrs.sh
 bash /root/bbrs.sh
 ```
@@ -65,7 +65,7 @@ bash /root/bbrs.sh
 执行：
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbrb.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbr/bbrb.sh)
 ```
 
 由于此版本带交互选项，执行后根据提示选择：
@@ -91,19 +91,19 @@ bash <(curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/m
 当前脚本地址：
 
 ```text
-https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbrx.sh
+https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbr/bbrx.sh
 ```
 
 执行：
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbrx.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbr/bbrx.sh)
 ```
 
-也可以：
+也可以先下载再执行：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbrx.sh -o /root/bbrx.sh
+curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbr/bbrx.sh -o /root/bbrx.sh
 chmod +x /root/bbrx.sh
 bash /root/bbrx.sh
 ```
