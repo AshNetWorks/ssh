@@ -27,8 +27,8 @@
 - 扩大本地临时端口范围
 - 自动按内存设置 conntrack
 - 调整文件描述符上限
-- 使用 `/etc/sysctl.d/99-entry-tuning.conf`
-- 不直接覆盖整个 `/etc/sysctl.conf`
+- 执行前自动备份 `/etc/sysctl.conf`
+- 直接重写 `/etc/sysctl.conf`
 - 保留 ICMP/Ping
 - 更适合长期用于入口服务器
 
@@ -87,12 +87,6 @@ bash <(curl -fsSL https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/m
 ### `bbrx.sh` — 激进版
 
 高强度网络参数版本。
-
-当前脚本地址：
-
-```text
-https://raw.githubusercontent.com/AshNetWorks/ssh/refs/heads/main/bbr/bbrx.sh
-```
 
 执行：
 
@@ -206,4 +200,4 @@ reboot
 soga restart
 ```
 
-> 注意：脚本会修改系统内核网络参数。执行前请确保拥有服务器控制台/VNC等备用登录方式，以便错误配置时恢复。
+> 注意：`bbrs.sh` 和 `bbrb.sh` 会备份后重写 `/etc/sysctl.conf`。执行前请确保拥有服务器控制台/VNC 等备用登录方式，以便错误配置时恢复。
